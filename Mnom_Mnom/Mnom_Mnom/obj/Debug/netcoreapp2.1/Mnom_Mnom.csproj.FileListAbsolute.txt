@@ -72,3 +72,4 @@ C:\Users\kirillova\GIT\MnomMnom\Mnom_Mnom\Mnom_Mnom\obj\Debug\netcoreapp2.1\Mnom
 C:\Users\kirillova\GIT\MnomMnom\Mnom_Mnom\Mnom_Mnom\obj\Debug\netcoreapp2.1\Mnom_Mnom.csproj.CopyComplete
 C:\Users\kirillova\GIT\MnomMnom\Mnom_Mnom\Mnom_Mnom\obj\Debug\netcoreapp2.1\Mnom_Mnom.Properties.Resources.resources
 C:\Users\kirillova\GIT\MnomMnom\Mnom_Mnom\Mnom_Mnom\obj\Debug\netcoreapp2.1\Mnom_Mnom.csproj.GenerateResource.cache
+C:\Users\kirillova\GIT\MnomMnom\Mnom_Mnom\Mnom_Mnom\obj\Debug\netcoreapp2.1\Mnom_Mnom.csprojAssemblyReference.cache

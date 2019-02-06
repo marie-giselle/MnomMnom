@@ -5,83 +5,97 @@
 		<Type>MainCourse</Type>
 		<Price>320</Price>
 		<Description>Рыба с жареной картошкой.</Description>
+		<ImagePath>/images/DishImages/fishandchips.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Карбонара</Title>
 		<Type>MainCourse</Type>
 		<Price>250</Price>
 		<Description>Паста с беконом, пармезаном и сливочным соусом.</Description>
+		<ImagePath>/images/DishImages/karbonara.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Корейка барбекю</Title>
 		<Type>MainCourse</Type>
 		<Price>290</Price>
 		<Description>Свинина на кости с соусом барбекю.</Description>
+		<ImagePath>/images/DishImages/bbq.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Чизбургер</Title>
 		<Type>Sandwiches</Type>
 		<Price>200</Price>
 		<Description>Булочка с вложенной в неё начинкой в виде сыра с приправами.</Description>
+		<ImagePath>/images/DishImages/cheeseburger.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Лагман</Title>
 		<Type>Soups</Type>
 		<Price>160</Price>
 		<Description>Густой суп с лапшой, говядиной и овощами.</Description>
+		<ImagePath>/images/DishImages/lagman.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Суп-пюре из шампиньонов</Title>
 		<Type>Soups</Type>
 		<Price>150</Price>
 		<Description>Крем-суп из измельченных шампиньонов со сливками.</Description>
+		<ImagePath>/images/DishImages/souparti.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Чай черный</Title>
 		<Type>Beverages</Type>
 		<Price>40</Price>
 		<Description>Классический черный чай.</Description>
+		<ImagePath>/images/DishImages/tea-black.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Чай зеленый</Title>
 		<Type>Beverages</Type>
 		<Price>40</Price>
 		<Description>Китайский зеленый чай.</Description>
+		<ImagePath>/images/DishImages/tea-green.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Морс</Title>
 		<Type>Beverages</Type>
 		<Price>60</Price>
 		<Description>Клюквенный морс.</Description>
+		<ImagePath>/images/DishImages/mors.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Чизкейк Нью-Йорк</Title>
 		<Type>Desserts</Type>
 		<Price>220</Price>
 		<Description>Запеченый десерт из сливочного сыра.</Description>
+		<ImagePath>/images/DishImages/sheesecake.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Цезарь</Title>
 		<Type>Salads</Type>
 		<Price>110</Price>
 		<Description>Салат Ромэн с добавлением курицы, помидорами черри и оригинальным соусом.</Description>
+		<ImagePath>/images/DishImages/salat_cezar.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Крабовый</Title>
 		<Type>Salads</Type>
 		<Price>95</Price>
 		<Description>Салат из крабовых палочек, яйца, сладкой кукурузы, заправленный майонезом.</Description>
+		<ImagePath>/images/DishImages/salat-krabovii.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Овощи на гриле</Title>
 		<Type>Sides</Type>
 		<Price>90</Price>
 		<Description>Баклажаны, цукини и томаты, обжаренные на гриле с оливковым маслом.</Description>
+		<ImagePath>/images/DishImages/grill.jpg</ImagePath>
 	</Dish>
 	<Dish>
 		<Title>Сырная тарелка</Title>
 		<Type>Appetizers</Type>
 		<Price>150</Price>
 		<Description>Ассорти из французских сыров.</Description>
+		<ImagePath>/images/DishImages/Assiette-fromages.jpg</ImagePath>
 	</Dish>
 </Dishes>

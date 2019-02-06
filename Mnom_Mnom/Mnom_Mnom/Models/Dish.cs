@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Mnom_Mnom.Models
+﻿namespace Mnom_Mnom.Models
 {
     public enum DishType
     {
@@ -21,5 +18,6 @@ namespace Mnom_Mnom.Models
         public DishType Type { get; set; }
         public int Price { get; set; }
         public string Description { get; set; }
+        public string ImagePath { get; set; }
     }
 }
