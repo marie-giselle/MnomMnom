@@ -20,9 +20,16 @@ namespace Mnom_Mnom.Pages.Dishes
 
         public IList<Dish> Dish { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? type)
         {
-            Dish = await _context.Dish.ToListAsync();
+			if (type.HasValue)
+			{
+				Dish = await _context.Dish.Where(s => s.Type == (DishType)type).ToListAsync();
+			}
+			else
+			{
+				Dish = await _context.Dish.ToListAsync();
+			}
         }
     }
 }

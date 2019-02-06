@@ -15,30 +15,42 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    <style>
+        header {
+            display: block;
+            background: #ffe5df
+        }
+        body {
+            background: #ffe5df
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">Mnom_Mnom</a>
+    <header>       
+        <center><img src="~/images/LogoLarge.png" /></center>
+        <nav class="navbar navbar-inverse navbar-sticky-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-page="/Index" class="navbar-brand">Mnom_Mnom</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        @*<li><a asp-page="/Dishes/Index" asp-route-type="4">Основные блюда</a></li>*@
+                        <li><a asp-page="/Promotions">Акции</a></li>
+                        <li><a asp-page="/Menu">Меню</a></li>
+                        <li><a asp-page="/Delivery">Доставка</a></li>
+                        <li><a asp-page="/About">О компании</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
-                    <li><a asp-page="/Dishes/Index">Dishes</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+        </nav>
+    </header>
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">

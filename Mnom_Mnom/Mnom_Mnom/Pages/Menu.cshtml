@@ -1,0 +1,43 @@
+﻿@page
+@model Mnom_Mnom.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+        img.imgRound {
+            clip-path: url(#clipping);
+            width: 320px;
+            height: 320px;
+            object-fit: contain;
+        }
+
+        p.MenuSection {
+            font-family: sans-serif;
+            color: brown;
+            font-weight: bold;
+            font-size: larger;
+        }
+    </style>
+    <svg>
+        <defs>
+            <clipPath id="clipping">
+                <circle r="100" cx="160" cy="160" />
+            </clipPath>
+        </defs>
+    </svg>
+</head>
+
+<body>
+    <h2>Menu</h2>
+    <div>
+        @foreach (var pair in Model.MenuSections)
+        {
+        <div>
+            <p class="MenuSection">@pair.Item2</p>
+            <a asp-page="/Dishes/Index" asp-route-type="@pair.Item1"><img class="imgRound" src="@pair.Item3" /></a>
+        </div>
+        }
+    </div>
+</body>
