@@ -10,8 +10,8 @@ using Mnom_Mnom.Models;
 namespace Mnom_Mnom.Migrations
 {
     [DbContext(typeof(Mnom_MnomContext))]
-    [Migration("20190205195015_UserAddresses")]
-    partial class UserAddress
+    [Migration("20190206130640_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,8 +59,9 @@ namespace Mnom_Mnom.Migrations
 
             modelBuilder.Entity("Mnom_Mnom.Models.Address", b =>
                 {
-                    b.Property<string>("AddressID")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("AddressID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("City");
 
@@ -93,7 +94,7 @@ namespace Mnom_Mnom.Migrations
 
                     b.Property<int>("Price");
 
-                    b.Property<string>("Titile");
+                    b.Property<string>("Title");
 
                     b.Property<int>("Type");
 
@@ -144,8 +145,6 @@ namespace Mnom_Mnom.Migrations
 
                     b.Property<int>("AddressID");
 
-                    b.Property<string>("AddressID1");
-
                     b.Property<string>("Comment");
 
                     b.Property<int>("PriceTotal");
@@ -158,7 +157,7 @@ namespace Mnom_Mnom.Migrations
 
                     b.HasKey("OrderID");
 
-                    b.HasIndex("AddressID1");
+                    b.HasIndex("AddressID");
 
                     b.HasIndex("UserID");
 
@@ -177,26 +176,24 @@ namespace Mnom_Mnom.Migrations
 
                     b.Property<DateTime>("RegistrationDate");
 
-                    b.Property<int>("TelNumbet");
+                    b.Property<string>("TelNumber");
 
                     b.HasKey("UserID");
 
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("Mnom_Mnom.Models.UserAddresses", b =>
+            modelBuilder.Entity("Mnom_Mnom.Models.UserAddress", b =>
                 {
                     b.Property<int>("UserID");
 
                     b.Property<int>("AddressID");
 
-                    b.Property<string>("AddressID1");
-
                     b.HasKey("UserID", "AddressID");
 
-                    b.HasIndex("AddressID1");
+                    b.HasIndex("AddressID");
 
-                    b.ToTable("UserAddresses");
+                    b.ToTable("UserAddress");
                 });
 
             modelBuilder.Entity("Mnom_Mnom.Models.AdditionalIngredients", b =>
@@ -254,7 +251,8 @@ namespace Mnom_Mnom.Migrations
                 {
                     b.HasOne("Mnom_Mnom.Models.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AddressID1");
+                        .HasForeignKey("AddressID")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Mnom_Mnom.Models.User", "User")
                         .WithMany()
@@ -262,11 +260,12 @@ namespace Mnom_Mnom.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Mnom_Mnom.Models.UserAddresses", b =>
+            modelBuilder.Entity("Mnom_Mnom.Models.UserAddress", b =>
                 {
                     b.HasOne("Mnom_Mnom.Models.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AddressID1");
+                        .HasForeignKey("AddressID")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Mnom_Mnom.Models.User", "User")
                         .WithMany()

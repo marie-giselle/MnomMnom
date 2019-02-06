@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<Dishes>
+	<Dish>
+		<Title>Fish and chips</Title>
+		<Type>MainCourse</Type>
+		<Price>320</Price>
+		<Description>Рыба с жареной картошкой.</Description>
+	</Dish>
+	<Dish>
+		<Title>Карбонара</Title>
+		<Type>MainCourse</Type>
+		<Price>250</Price>
+		<Description>Паста с беконом, пармезаном и сливочным соусом.</Description>
+	</Dish>
+	<Dish>
+		<Title>Корейка барбекю</Title>
+		<Type>MainCourse</Type>
+		<Price>290</Price>
+		<Description>Свинина на кости с соусом барбекю.</Description>
+	</Dish>
+	<Dish>
+		<Title>Чизбургер</Title>
+		<Type>Sandwiches</Type>
+		<Price>200</Price>
+		<Description>Булочка с вложенной в неё начинкой в виде сыра с приправами.</Description>
+	</Dish>
+	<Dish>
+		<Title>Лагман</Title>
+		<Type>Soups</Type>
+		<Price>160</Price>
+		<Description>Густой суп с лапшой, говядиной и овощами.</Description>
+	</Dish>
+	<Dish>
+		<Title>Суп-пюре из шампиньонов</Title>
+		<Type>Soups</Type>
+		<Price>150</Price>
+		<Description>Крем-суп из измельченных шампиньонов со сливками.</Description>
+	</Dish>
+	<Dish>
+		<Title>Чай черный</Title>
+		<Type>Beverages</Type>
+		<Price>40</Price>
+		<Description>Классический черный чай.</Description>
+	</Dish>
+	<Dish>
+		<Title>Чай зеленый</Title>
+		<Type>Beverages</Type>
+		<Price>40</Price>
+		<Description>Китайский зеленый чай.</Description>
+	</Dish>
+	<Dish>
+		<Title>Морс</Title>
+		<Type>Beverages</Type>
+		<Price>60</Price>
+		<Description>Клюквенный морс.</Description>
+	</Dish>
+	<Dish>
+		<Title>Чизкейк Нью-Йорк</Title>
+		<Type>Desserts</Type>
+		<Price>220</Price>
+		<Description>Запеченый десерт из сливочного сыра.</Description>
+	</Dish>
+	<Dish>
+		<Title>Цезарь</Title>
+		<Type>Salads</Type>
+		<Price>110</Price>
+		<Description>Салат Ромэн с добавлением курицы, помидорами черри и оригинальным соусом.</Description>
+	</Dish>
+	<Dish>
+		<Title>Крабовый</Title>
+		<Type>Salads</Type>
+		<Price>95</Price>
+		<Description>Салат из крабовых палочек, яйца, сладкой кукурузы, заправленный майонезом.</Description>
+	</Dish>
+	<Dish>
+		<Title>Овощи на гриле</Title>
+		<Type>Sides</Type>
+		<Price>90</Price>
+		<Description>Баклажаны, цукини и томаты, обжаренные на гриле с оливковым маслом.</Description>
+	</Dish>
+	<Dish>
+		<Title>Сырная тарелка</Title>
+		<Type>Appetizers</Type>
+		<Price>150</Price>
+		<Description>Ассорти из французских сыров.</Description>
+	</Dish>
+</Dishes>

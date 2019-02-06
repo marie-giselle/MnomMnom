@@ -17,7 +17,7 @@ namespace Mnom_Mnom.Models
     public class Dish
     {
         public int DishID { get; set; }
-        public string Titile { get; set; }
+        public string Title { get; set; }
         public DishType Type { get; set; }
         public int Price { get; set; }
         public string Description { get; set; }

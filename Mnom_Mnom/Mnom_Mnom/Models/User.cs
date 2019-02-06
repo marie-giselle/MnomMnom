@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Mnom_Mnom.Models
 {
@@ -8,9 +9,10 @@ namespace Mnom_Mnom.Models
         public int UserID { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        [XmlElement(DataType = "date")]
         public DateTime RegistrationDate { get; set; }
-        public int TelNumbet { get; set; }
-
-        public ICollection<Address> Addresses { get; set; }
+        public string TelNumber { get; set; }        
+        
+        public List<Address> Addresses { get; set; }
     }
 }

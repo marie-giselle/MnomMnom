@@ -1,8 +1,9 @@
 ﻿using Mnom_Mnom.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Mnom_Mnom.Data
 {
@@ -10,14 +11,33 @@ namespace Mnom_Mnom.Data
     {
         public static void Initialize(Mnom_MnomContext context)
         {
-            if(context.Dish.Any())
+            if (!context.Dish.Any())
             {
-                return;
+                string path = Path.Combine(Path.GetFullPath(Properties.Resources.XmlFolder), "Dishes.xml");
+                using (Stream reader = new FileStream(path, FileMode.Open))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Dish[]), new XmlRootAttribute("Dishes"));
+                    Dish[] dishes = (Dish[])serializer.Deserialize(reader);
+                    context.Dish.AddRange(dishes);
+                    context.SaveChanges();
+                }
             }
 
-            //TODO: Заполнение тестовыми данными
-
-            context.SaveChanges();
+            if (!context.User.Any())
+            {
+                string path = Path.Combine(Path.GetFullPath(Properties.Resources.XmlFolder), "Users.xml");
+                using (Stream reader = new FileStream(path, FileMode.Open))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(User[]), new XmlRootAttribute("Users"));
+                    User[] users = (User[])serializer.Deserialize(reader);
+                    foreach (User usr in users)
+                    {
+                        context.Address.AddRange(usr.Addresses);
+                    }
+                    context.User.AddRange(users);
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }

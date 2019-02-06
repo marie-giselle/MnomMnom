@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Users>
+	<User>
+		<Login>admin</Login>
+		<Password>admin</Password>
+		<RegistrationDate>2019-02-06</RegistrationDate>
+		<TelNumber>89168479131</TelNumber>
+		<Addresses>
+			<Address>
+				<City>Москва</City>
+				<Street>Нагорная</Street>
+				<House>24к10</House>
+				<Flat>14</Flat>
+				<Region>Москва</Region>
+				<Comment>Код домофона: 14К0777</Comment>
+			</Address>
+		</Addresses>		
+	</User>
+</Users>

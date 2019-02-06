@@ -4,10 +4,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Mnom_Mnom.Migrations
 {
-    public partial class Large : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Dish",
+                columns: table => new
+                {
+                    DishID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Title = table.Column<string>(nullable: true),
+                    Type = table.Column<int>(nullable: false),
+                    Price = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Dish", x => x.DishID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Ingredient",
                 columns: table => new
@@ -31,7 +47,7 @@ namespace Mnom_Mnom.Migrations
                     Login = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     RegistrationDate = table.Column<DateTime>(nullable: false),
-                    TelNumbet = table.Column<int>(nullable: false)
+                    TelNumber = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -68,7 +84,8 @@ namespace Mnom_Mnom.Migrations
                 name: "Address",
                 columns: table => new
                 {
-                    AddressID = table.Column<string>(nullable: false),
+                    AddressID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     City = table.Column<string>(nullable: true),
                     Street = table.Column<string>(nullable: true),
                     House = table.Column<string>(nullable: true),
@@ -99,20 +116,43 @@ namespace Mnom_Mnom.Migrations
                     Status = table.Column<int>(nullable: false),
                     Time = table.Column<DateTime>(nullable: false),
                     PriceTotal = table.Column<int>(nullable: false),
-                    Comment = table.Column<string>(nullable: true),
-                    AddressID1 = table.Column<string>(nullable: true)
+                    Comment = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Order", x => x.OrderID);
                     table.ForeignKey(
-                        name: "FK_Order_Address_AddressID1",
-                        column: x => x.AddressID1,
+                        name: "FK_Order_Address_AddressID",
+                        column: x => x.AddressID,
                         principalTable: "Address",
                         principalColumn: "AddressID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Order_User_UserID",
+                        column: x => x.UserID,
+                        principalTable: "User",
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserAddress",
+                columns: table => new
+                {
+                    UserID = table.Column<int>(nullable: false),
+                    AddressID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserAddress", x => new { x.UserID, x.AddressID });
+                    table.ForeignKey(
+                        name: "FK_UserAddress_Address_AddressID",
+                        column: x => x.AddressID,
+                        principalTable: "Address",
+                        principalColumn: "AddressID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserAddress_User_UserID",
                         column: x => x.UserID,
                         principalTable: "User",
                         principalColumn: "UserID",
@@ -204,14 +244,19 @@ namespace Mnom_Mnom.Migrations
                 column: "OrderID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_AddressID1",
+                name: "IX_Order_AddressID",
                 table: "Order",
-                column: "AddressID1");
+                column: "AddressID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Order_UserID",
                 table: "Order",
                 column: "UserID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserAddress_AddressID",
+                table: "UserAddress",
+                column: "AddressID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -226,7 +271,13 @@ namespace Mnom_Mnom.Migrations
                 name: "DishInOrder");
 
             migrationBuilder.DropTable(
+                name: "UserAddress");
+
+            migrationBuilder.DropTable(
                 name: "Ingredient");
+
+            migrationBuilder.DropTable(
+                name: "Dish");
 
             migrationBuilder.DropTable(
                 name: "Order");
