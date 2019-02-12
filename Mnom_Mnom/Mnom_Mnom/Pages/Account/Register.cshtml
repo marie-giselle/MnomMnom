@@ -1,39 +1,35 @@
 ﻿@page
-@model Mnom_Mnom.Models.Register
-@{
-    ViewData["Title"] = "Register";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
-}
+@model Mnom_Mnom.Pages.Account.RegisterModel
 
 <h2>Регистрация</h2>
 
-<form asp-action="Register" asp-controller="Account" asp-anti-forgery="true">
+<form method="post">
     <div class="validation" asp-validation-summary="ModelOnly"></div>
     <div>
         <div>
-            <label asp-for="Name">Введите Ваше имя</label><br />
-            <input type="text" asp-for="Name" />
-            <span asp-validation-for="Name" />
+            <label asp-for="Register.Name">Введите Ваше имя</label><br />
+            <input type="text" asp-for="Register.Name" />
+            <span asp-validation-for="Register.Name" />
         </div>
         <div>
-            <label asp-for="Email">Введите Email</label><br />
-            <input type="text" asp-for="Email" />
-            <span asp-validation-for="Email" />
+            <label asp-for="Register.Email">Введите Email</label><br />
+            <input type="text" asp-for="Register.Email" />
+            <span asp-validation-for="Register.Email" />
         </div>
         <div>
-            <label asp-for="TelNumber">Введите номер мобильного телефона</label><br />
-            <input asp-for="TelNumber" />
-            <span asp-validation-for="TelNumber" />
+            <label asp-for="Register.TelNumber">Введите номер мобильного телефона</label><br />
+            <input asp-for="Register.TelNumber" />
+            <span asp-validation-for="Register.TelNumber" />
         </div>
         <div>
-            <label asp-for="Password">Введите пароль</label><br />
-            <input asp-for="Password" />
-            <span asp-validation-for="Password" />
+            <label asp-for="Register.Password">Введите пароль</label><br />
+            <input asp-for="Register.Password" />
+            <span asp-validation-for="Register.Password" />
         </div>
         <div>
-            <label asp-for="ConfirmPassword">Повторите пароль</label><br />
-            <input asp-for="ConfirmPassword" />
-            <span asp-validation-for="ConfirmPassword" />
+            <label asp-for="Register.ConfirmPassword">Повторите пароль</label><br />
+            <input asp-for="Register.ConfirmPassword" />
+            <span asp-validation-for="Register.ConfirmPassword" />
         </div>
         <div>
             <input type="submit" value="Регистрация" />

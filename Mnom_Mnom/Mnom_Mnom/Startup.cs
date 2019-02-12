@@ -60,12 +60,7 @@ namespace Mnom_Mnom
             app.UseCookiePolicy();
 			app.UseAuthentication();
 
-			app.UseMvc();//(routes =>
-			//{
-			//	routes.MapRoute(
-			//		name: "default",
-			//		template: "{controller}/{action}/{id?}");
-			//});
+			app.UseMvc();
 		}
     }
 }

@@ -1,25 +1,25 @@
 ﻿@page
-@model Mnom_Mnom.Models.Login
+@model Mnom_Mnom.Pages.Account.LoginModel
 
 <h2>Вход на сайт</h2>
 
-<a asp-page="/Accounts/Register" asp-controller="Account" method="get">Регистрация</a>
+<a asp-page="./Register">Регистрация</a>
 
-<form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
-    <div class="validation" asp-validation-summary="ModelOnly"></div>
-    <div>
+<div>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="UserKey">Введите Email или номер телефона</label>
-            <input type="text" asp-for="UserKey" />
-            <span asp-validation-for="UserKey" />
+            <label asp-for="Login.UserKey">Введите Email или номер телефона</label>
+            <input type="text" asp-for="Login.UserKey" />
+            <span asp-validation-for="Login.UserKey" />
         </div>
         <div class="form-group">
-            <label asp-for="Password">Введите пароль</label>
-            <input asp-for="Password" />
-            <span asp-validation-for="Password" />
+            <label asp-for="Login.Password">Введите пароль</label>
+            <input asp-for="Login.Password" />
+            <span asp-validation-for="Login.Password" />
         </div>
         <div class="form-group">
             <input type="submit" value="Войти" class="btn" />
         </div>
-    </div>
-</form>
+    </form>
+</div>

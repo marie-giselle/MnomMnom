@@ -81,7 +81,7 @@ namespace Mnom_Mnom.Controllers
 			return View(model);
 		}
 
-		private async Task Authenticate(User user)
+		public async Task Authenticate(User user)
 		{
 			var claims = new List<Claim>
 			{
