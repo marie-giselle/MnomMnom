@@ -23,8 +23,25 @@ namespace Mnom_Mnom.Pages
 		public void OnGet()
         {
 			var cart = SessionHelper.GetObjectFromJson<List<DishInCart>>(HttpContext.Session, "cart");
-			DishesInCart = cart;
-			Total = cart.Sum(item => item.Dish.Price * item.Quantity);
+			if (cart != null)
+			{
+				DishesInCart = cart;
+				Total = cart.Sum(item => item.Dish.Price * item.Quantity);
+			}
+			else
+			{
+				Total = 0;
+			}
 		}
-    }
+
+		public void OnGetAddQuantity(int id)
+		{
+
+		}
+
+		public void OnGetReduceQuantity(int id)
+		{
+
+		}
+	}
 }
