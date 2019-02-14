@@ -27,7 +27,7 @@ namespace Mnom_Mnom.Pages.Dishes
                 return NotFound();
             }
 
-            Dish = await _context.Dish.FirstOrDefaultAsync(m => m.DishID == id);
+            Dish = await _context.Dishes.FirstOrDefaultAsync(m => m.DishID == id);
 
             if (Dish == null)
             {

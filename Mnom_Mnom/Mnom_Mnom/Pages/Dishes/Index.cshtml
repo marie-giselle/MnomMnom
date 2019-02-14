@@ -54,7 +54,11 @@
             </td>
         </tr>
         <tr>
-            <td colspan="5" align="right">Добавить в корзину</td>
+            <td colspan="5" align="right">               
+                <form method="post">
+                    <input type="submit" value="Добавить в корзину" asp-page-handler="AddToCart" asp-route-id="@item.DishID" class="btn btn-primary"/>
+                </form>
+            </td>
         </tr>
 }
     </tbody>

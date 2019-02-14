@@ -28,7 +28,7 @@ namespace Mnom_Mnom.Pages.Dishes
                 return NotFound();
             }
 
-            Dish = await _context.Dish.FirstOrDefaultAsync(m => m.DishID == id);
+            Dish = await _context.Dishes.FirstOrDefaultAsync(m => m.DishID == id);
 
             if (Dish == null)
             {
@@ -44,11 +44,11 @@ namespace Mnom_Mnom.Pages.Dishes
                 return NotFound();
             }
 
-            Dish = await _context.Dish.FindAsync(id);
+            Dish = await _context.Dishes.FindAsync(id);
 
             if (Dish != null)
             {
-                _context.Dish.Remove(Dish);
+                _context.Dishes.Remove(Dish);
                 await _context.SaveChangesAsync();
             }
 

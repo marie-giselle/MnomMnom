@@ -33,7 +33,7 @@ namespace Mnom_Mnom.Pages.Dishes
                 return Page();
             }
 
-            _context.Dish.Add(Dish);
+            _context.Dishes.Add(Dish);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

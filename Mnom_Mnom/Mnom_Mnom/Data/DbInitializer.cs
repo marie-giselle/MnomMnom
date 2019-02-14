@@ -11,14 +11,14 @@ namespace Mnom_Mnom.Data
     {
         public static void Initialize(Mnom_MnomContext context)
         {
-            if (!context.Dish.Any())
+            if (!context.Dishes.Any())
             {
                 string path = Path.Combine(Path.GetFullPath(Properties.Resources.XmlFolder), "Dishes.xml");
                 using (Stream reader = new FileStream(path, FileMode.Open))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(Dish[]), new XmlRootAttribute("Dishes"));
                     Dish[] dishes = (Dish[])serializer.Deserialize(reader);
-                    context.Dish.AddRange(dishes);
+                    context.Dishes.AddRange(dishes);
                     context.SaveChanges();
                 }
             }
@@ -32,7 +32,7 @@ namespace Mnom_Mnom.Data
                     User[] users = (User[])serializer.Deserialize(reader);
                     foreach (User usr in users)
                     {
-                        context.Address.AddRange(usr.Addresses);
+                        context.Addresses.AddRange(usr.Addresses);
                     }
                     context.User.AddRange(users);
                     context.SaveChanges();

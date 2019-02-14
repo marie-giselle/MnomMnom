@@ -28,7 +28,6 @@ namespace Mnom_Mnom
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
 
-
             services.AddDbContext<Mnom_MnomContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Mnom_MnomContext")));
 
@@ -39,7 +38,8 @@ namespace Mnom_Mnom
 					options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
 				});
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);			
+			services.AddSession();
 		}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +59,7 @@ namespace Mnom_Mnom
             app.UseStaticFiles();
             app.UseCookiePolicy();
 			app.UseAuthentication();
+			app.UseSession();
 
 			app.UseMvc();
 		}

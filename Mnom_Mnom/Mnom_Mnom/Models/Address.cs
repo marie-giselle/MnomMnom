@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Mnom_Mnom.Models
+﻿namespace Mnom_Mnom.Models
 {
     [System.Xml.Serialization.XmlRoot("Addresses")]
     public class Address

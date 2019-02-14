@@ -29,7 +29,7 @@ namespace Mnom_Mnom.Pages.Dishes
                 return NotFound();
             }
 
-            Dish = await _context.Dish.FirstOrDefaultAsync(m => m.DishID == id);
+            Dish = await _context.Dishes.FirstOrDefaultAsync(m => m.DishID == id);
 
             if (Dish == null)
             {
@@ -68,7 +68,7 @@ namespace Mnom_Mnom.Pages.Dishes
 
         private bool DishExists(int id)
         {
-            return _context.Dish.Any(e => e.DishID == id);
+            return _context.Dishes.Any(e => e.DishID == id);
         }
     }
 }

@@ -1,0 +1,57 @@
+﻿@page
+@model Mnom_Mnom.Pages.CartModel
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Корзина</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.DishesInCart[0].Dish.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DishesInCart[0].Dish.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DishesInCart[0].Dish.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DishesInCart[0].Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DishesInCart)
+        {
+        <tr>
+            <td>
+                <img src="@item.Dish.ImagePath" height="200" width="200" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dish.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dish.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dish.Price)
+            </td>
+            <td></td>
+        </tr>
+                }
+        <tr>
+            <td colspan="4" align="right">Всего:</td>
+            <td>@Html.DisplayFor(model => model.Total)</td>
+            <td></td>
+        </tr>
+        </tbody>
+</table>
