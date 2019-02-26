@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Mnom_Mnom.Models
 {
@@ -13,5 +14,8 @@ namespace Mnom_Mnom.Models
 		public User User { get; set; }
 		public PaymentMethod PaymentMethod { get; set; }
 		public Address Address { get; set; }
+
+		public List<DishInCart> Dishes { get; set; }
+		public List<AdditionInCart> Additions { get; set; }
 	}
 }

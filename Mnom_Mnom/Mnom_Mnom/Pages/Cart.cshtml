@@ -38,9 +38,9 @@
         </tr>
     </thead>
     <tbody>
-        @if (Model.DishesInCart != null)
+        @if (Model.Cart.Dishes != null)
         {
-            foreach (var item in Model.DishesInCart)
+            foreach (var item in Model.Cart.Dishes)
             {
         <tr>
             <td>
@@ -53,23 +53,29 @@
                 @Html.DisplayFor(modelItem => item.Dish.Type)
             </td>
             <td>
-                <form method="get">
-                    <input type="button" class="triangle-left" asp-page-handler="AddQuantity" asp-route-id="@item.DishID"/>
-                    @Html.DisplayFor(modelItem => item.Quantity)
-                    <input type="button" class="triangle-right" asp-page-handler="ReduceQuantity" asp-route-id="@item.DishID"/>
-                </form>
+                @Html.DisplayFor(modelItem => item.Dish.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Dish.Price)
+                <form method="post">
+                    <input type="submit" class="triangle-left" asp-page-handler="ReduceQuantity" asp-route-id="@item.DishID" />
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                    <input type="submit" class="triangle-right" asp-page-handler="AddQuantity" asp-route-id="@item.DishID" />
+                </form>
             </td>
             <td></td>
         </tr>
             }
         }
         <tr>
-            <td colspan="4" align="right">Всего:</td>
+            <td colspan="3" align="right">Всего:</td>
             <td>@Html.DisplayFor(model => model.Total)</td>
             <td></td>
+            <td>
+                @if (Model.Cart.Dishes != null && Model.Cart.Dishes.Any())
+                {
+                    <a asp-page="/Order" class="btn btn-primary">Оформить заказ</a>
+                }
+            </td>
         </tr>
         </tbody>
 </table>
